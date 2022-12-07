@@ -25,7 +25,7 @@ namespace PRACTICA_1_GIT
         private void button1_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = ' ';
+            char tipoTelegrama = 'o';
             int numPalabras = 0;
             double coste;
             //Leo el telegrama
@@ -34,11 +34,17 @@ namespace PRACTICA_1_GIT
             if (cbUrgente.Checked)
                 tipoTelegrama = 'u';
             //Obtengo el número de palabras que forma el telegrama 
-            numPalabras = textoTelegrama.Length;
+            //numPalabras = textoTelegrama.Length;
+            //Cuento el numeró de Espacios que hay en el texto.
+            for (int i = 0; i < textoTelegrama.Length; i++)
+            {
+                if (textoTelegrama[i] == ' ')
+                    numPalabras++;
+            }
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
                 if (numPalabras <= 10)
-                    coste = 25;
+                    coste = 2.5;
                 else
                     coste = 0.5 * numPalabras;
             else
@@ -51,6 +57,11 @@ namespace PRACTICA_1_GIT
             else
                 coste = 0;
             txtPrecio.Text = coste.ToString() + " euros";
+        }
+
+        private void txtTelegrama_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
