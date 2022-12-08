@@ -25,7 +25,7 @@ namespace PRACTICA_1_GIT
         private void button1_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = 'o';
+            char tipoTelegrama = ' ';
             int numPalabras = 0;
             double coste;
             //Leo el telegrama
@@ -33,6 +33,9 @@ namespace PRACTICA_1_GIT
             // telegrama urgente?
             if (cbUrgente.Checked)
                 tipoTelegrama = 'u';
+
+            if (cbOrdinario.Checked)
+                tipoTelegrama = 'o';
             //Obtengo el número de palabras que forma el telegrama 
             //numPalabras = textoTelegrama.Length;
             //Cuento el numeró de Espacios que hay en el texto.
@@ -60,6 +63,11 @@ namespace PRACTICA_1_GIT
         }
 
         private void txtTelegrama_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbUrgente_CheckedChanged(object sender, EventArgs e)
         {
 
         }
